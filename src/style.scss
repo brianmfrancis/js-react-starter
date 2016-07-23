@@ -1,6 +1,73 @@
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
-  background: darken(white, 10%);
+  background: rgba(139,69,19,40%);
   margin: 50px;
+  //background-image: url(images/bulleting.jpg);
+
+}
+
+#text {
+  flex-grow: 8;
+  align-content: stretch;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#submit {
+  flex-grow: 1;
+  font-size: inherit;
+  padding: 15px;
+  border-left-style: solid;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  // border-style: none;
+  border-color: grey;
+  background-color: white;
+}
+
+#searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  width: 80%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #888888;
+  background-color: white;
+}
+
+#note {
+  position: absolute;
+  min-width: 200px;
+  min-height: 120px;
+  font-size: 1.5em;
+  color: black;
+  background-color: rgba(255, 255, 0, 40%);
+  border-radius: 5px;
+  border-color: black;
+
+}
+#welcome {
+  padding: 10px;
+}
+
+#notetop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+#editinput {
+  height: 100%;
+  width: 95%;
+  display: inline-block;
+}
+
+#textarea {
+  width: 95%;
+  max-width: 95%;
 }

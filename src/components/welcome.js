@@ -4,8 +4,8 @@ import React from 'react';
 // function based "dumb" component with no state
 const Welcome = () => {
   return (
-    <div>
-      react+webpack+babel+eslint starter
+    <div id="welcome">
+      This is your New Note Pad! Enjoy!
     </div>
   );
 };

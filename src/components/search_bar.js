@@ -3,12 +3,12 @@ import React from 'react';
 
 let id = 0;
 
-const InputBar = (props) => {
+const SearchBar = (props) => {
   function submit(event) {
     event.preventDefault();
     props.onSubmit(id, document.getElementById('text').value);
     id++;
-    document.getElementById('inputbar').reset();
+    document.getElementById('searchbar').reset();
   }
 
   return (
@@ -21,7 +21,7 @@ const InputBar = (props) => {
     );
 };
 
-export default InputBar;
+export default SearchBar;
 // import React, { Component } from 'react';
 //
 //

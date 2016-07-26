@@ -58,74 +58,46 @@ class Note extends Component {
     if (this.state.isEditing) {
       return (
         // from dragable site
-        <Draggable
-          handle=".handle"
-          defaultPosition={{ x: 40, y: 40 }}
-          position={null}
-          grid={[25, 25]}
-          zIndex={100}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}
-        >
-          <div id="note">
-            <span id="notetop">
-              <div>
-                <a>{this.props.title}</a>
-              </div>
-              <div>
-                <i className="fa fa-trash-o" aria-hidden="true" onClick={this.onDelete}></i>
-              </div>
-              <div>
-                <i className="fa fa-check" aria-hidden="true" onClick={this.onEdit}></i>
-              </div>
-              <div className="handle">
-                <i className="fa fa-arrows-alt"></i>
-              </div>
-            </span>
-            Write in marked down
-            <div> <Textarea id="textarea" defaultValue={this.props.text} onChange={this.onChange} /></div>
-          </div>
-        </Draggable>
+        <div> <Textarea id="textarea" defaultValue={this.props.text} onChange={this.onChange} /></div>
       );
     } else {
       return (
-        <Draggable
-          handle=".handle"
-          defaultPosition={{ x: 40, y: 40 }}
-          position={null}
-          grid={[25, 25]}
-          zIndex={100}
-          onStart={this.handleStart}
-          onDrag={this.handleDrag}
-          onStop={this.handleStop}
-        >
-          <div id="note">
-            <span id="notetop">
-              <div>
-                <a>{this.props.title}</a>
-              </div>
-              <div>
-                <i className="fa fa-trash-o" aria-hidden="true" onClick={this.onDelete}></i>
-              </div>
-              <div>
-                <i className="fa fa-pencil" aria-hidden="true" onClick={this.onEdit}></i>
-              </div>
-              <div className="handle">
-                <i className="fa fa-arrows-alt"></i>
-              </div>
-            </span>
-            <div dangerouslySetInnerHTML={{ __html: marked(this.props.text || '') }} />
-          </div>
-        </Draggable>
+        <div dangerouslySetInnerHTML={{ __html: marked(this.props.text || '') }} />
       );
     }
   }
   render() {
     return (
-      <div>
-        {this.renderSomeSection()}
-      </div>
+      <Draggable
+        handle=".handle"
+        defaultPosition={{ x: 40, y: 40 }}
+        position={null}
+        grid={[25, 25]}
+        zIndex={100}
+        onStart={this.handleStart}
+        onDrag={this.handleDrag}
+        onStop={this.handleStop}
+      >
+        <div id="note">
+          <span id="notetop">
+            <div>
+              <a>{this.props.title}</a>
+            </div>
+            <div>
+              <i className="fa fa-trash-o" aria-hidden="true" onClick={this.onDelete}></i>
+            </div>
+            <div>
+              <i className="fa fa-pencil" aria-hidden="true" onClick={this.onEdit}></i>
+            </div>
+            <div className="handle">
+              <i className="fa fa-arrows-alt"></i>
+            </div>
+          </span>
+          <div>
+            {this.renderSomeSection()}
+          </div>
+        </div>
+      </Draggable>
     );
   }
 

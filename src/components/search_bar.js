@@ -1,14 +1,16 @@
-
 import React from 'react';
 
 let id = 0;
 
 const SearchBar = (props) => {
+  // this functionality was encouraged from messing around on http://www.w3schools.com/jsref/dom_obj_form.asp
+  // after trying to modify the below smart search bar was an issue
+
   function submit(event) {
     event.preventDefault();
     props.onSubmit(id, document.getElementById('text').value);
-    id++;
     document.getElementById('searchbar').reset();
+    id++;
   }
 
   return (

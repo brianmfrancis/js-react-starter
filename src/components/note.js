@@ -77,7 +77,7 @@ class Note extends Component {
                 <i className="fa fa-trash-o" aria-hidden="true" onClick={this.onDelete}></i>
               </div>
               <div>
-                <i className="fa fa-pencil" aria-hidden="true" onClick={this.onEdit}></i>
+                <i className="fa fa-check" aria-hidden="true" onClick={this.onEdit}></i>
               </div>
               <div className="handle">
                 <i className="fa fa-arrows-alt"></i>
